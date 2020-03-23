@@ -7,7 +7,8 @@ class SignUp extends React.Component {
       email: "",
       name: "",
       lastname: "",
-      password: ""
+      password: "",
+      passwordbis: ""
     };
   }
 
@@ -31,7 +32,7 @@ class SignUp extends React.Component {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="name">Lastname</label>
+              <label htmlFor="lastname">Lastname</label>
               <input
                 type="text"
                 className="form-control"
@@ -47,6 +48,24 @@ class SignUp extends React.Component {
                 aria-describedby="emailHelp"
                 value={this.state.email}
                 onChange={this.updateEmailField.bind(this)}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="text"
+                className="form-control"
+                value={this.state.password}
+                onChange={this.onPasswordChange.bind(this)}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="passwordbis">Passwordbis</label>
+              <input
+                type="text"
+                className="form-control"
+                value={this.state.passwordbis}
+                onChange={this.onPasswordbisChange.bind(this)}
               />
             </div>
 
@@ -69,6 +88,14 @@ class SignUp extends React.Component {
 
   onLastNameChange(event) {
     this.setState({ lastname: event.target.value });
+  }
+
+  onPasswordChange(event) {
+    this.setState({ password: event.target.value });
+  }
+
+  onPasswordbisChange(event) {
+    this.setState({ passwordbis: event.target.value });
   }
 
   handleSubmit(event) {
